@@ -41,6 +41,6 @@ fi
 cd "$directory" || exit 1
 
 # Convert images based on user choices
-find . -type f -name "*.$initial_format" -exec sh -c 'convert "$1" "${1%.$initial_format}.$new_format" && rm "$1"' _ {} \;
+find . -type f -name "*.$initial_format" -exec sh -c 'convert "$1" "${1%.*}.$new_format" && rm "$1"' _ {} \;
 
 echo "Conversion completed."
